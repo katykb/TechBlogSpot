@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const sequelize = require('../config/connection')
-const { User, Blog, Comments } = require("../models");
+const { User, Posts, Comments } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
@@ -11,8 +11,8 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-    if (req.session.logged_in) res.render("homepage");
-    else res.render("login");
+    // if (req.session.logged_in) res.render("homepage");
+    // else res.render("login");
   } catch (err) {
     res.status(500).json(err);
   }

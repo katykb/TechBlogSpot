@@ -4,7 +4,7 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const sequelize = require("./config/connection");
-//const controllers = require("./controllers");
+const controllers = require("./controllers");
 
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use(express.static("public"));
-//app.use(controllers)
+app.use(controllers)
 
 
 //sequelize.sync({ force:false }).then(() => {
