@@ -1,5 +1,5 @@
 const sequelize = require("../config/connection");
-const { User } = require("../models");
+const { Users } = require("../models");
 
 const userData = [
   {
@@ -20,6 +20,6 @@ const userData = [
   },
 ];
 
-const seedUsers = () => User.bulkCreate(userData);
+const seedUsers = () => Users.bulkCreate(userData);
 
 module.exports = seedUsers;

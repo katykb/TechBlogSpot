@@ -48,7 +48,7 @@ router.post("/logout", (req, res) => {
   }
 });
 
-//create new employee
+//create new user
 router.post("/", async (req, res) => {
   try {
     const newUser = await User.create(req.body);
